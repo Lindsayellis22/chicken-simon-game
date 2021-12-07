@@ -1,0 +1,14 @@
+FIND the CSS chiicken I'll be using in this project. 
+PLAN out the HTML and placement of buttons and images.
+let array
+let array called chickenMoves for computer
+chickens are asigned a number for jumping in the array 
+
+let playerMoves array 
+compare array to original 
+
+let numberofRounds
+there will be 10 rounds incriment round after each player is gone
+
+
+inside click handler function push number into player moves array 
