@@ -12,3 +12,12 @@ there will be 10 rounds incriment round after each player is gone
 
 
 inside click handler function push number into player moves array 
+
+when click on chicken, add margin bottom and set interval
+write a function that pushes random number into chicken arrayfunction chicken addChickenMove [
+    PUSH RANDOM NUMBER INTO CHICKEN MOVES
+]
+chickendance needs to loop over chicken array and make each chicken jump up
+
+capture clicked on chickens
+write a function that generates a random number into chickenmoves var and iterate over chicken moves array

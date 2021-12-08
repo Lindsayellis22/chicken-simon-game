@@ -4,22 +4,14 @@ const playerMovesArray = [];
 // let numberOfRounds = 10;
 const startButton = document.querySelector('button');
 
-const chickenSprite = document.querySelector('.head')
+
+startButton.addEventListener("click", startGame);
 
 function startGame() {
     console.log('I was clicked');
 }
 
-function clickChicken() {
-    console.log('hello chicken')
-}
 
-startButton.addEventListener("click", startGame);
-// chickenSprite.addEventListener("click", clickChicken);
-
-// function chickenMoves() {
-
-// }
 
 function gameRounds() {
     let numberOfRounds = 10;
@@ -29,3 +21,14 @@ function gameRounds() {
     // chickenMovesArray.push("");
 }
 gameRounds();
+
+const chickenSprite = document.getElementById('0');
+console.log(chickenSprite);
+chickenSprite.addEventListener("click", clickChicken);
+
+function clickChicken() {
+    
+    console.log('hello chicken')
+}
+
+
