@@ -1,11 +1,15 @@
 console.log('hi');
 // const chickenMovesArray = [];
 const playerMovesArray = [];
+const chickenMovesArray = [];
+console.log(chickenMovesArray);
 let numberOfRounds = 0;
 const startButton = document.getElementById('start');
 console.log(startButton);
 
 startButton.addEventListener("click", startGame);
+
+chickenSprite1 = document.getElementById('1');
 
 function startGame() {
     // chickenShow();
@@ -41,11 +45,19 @@ function chickenShow() {
     const arr = [0, 2, 1, 3];
     arr.map(chickenNum => {
         changeColor(chickenNum);
-    }, 2000);
+    }, 10000);
 }
 
-// chickenShow();
+// function playGame() {
+//     constChickenIdArray = [0, 1, 2, 3]
+//     randomChicken = Math.floor(Math.random() * 4) + 1;
+    
+// }
+// playGame()
 
+function chickenRounds() {
+    
+}
 
 
 
