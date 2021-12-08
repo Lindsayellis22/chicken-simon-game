@@ -18,8 +18,15 @@ body {
     width: 200px;
     height: 100px;
     transform: translate(-0%, -0%);
+}
 
-  }
+/* .color-change {
+    background: red;
+} */
+
+#body0 {
+    background: brown;
+}
   
   .body {
     position: absolute;

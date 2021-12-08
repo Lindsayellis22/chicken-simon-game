@@ -21,3 +21,12 @@ chickendance needs to loop over chicken array and make each chicken jump up
 
 capture clicked on chickens
 write a function that generates a random number into chickenmoves var and iterate over chicken moves array
+
+GAME STEPS
+
+1. player presses start buttons
+2. round 1, 1 random chicken will change color by the computer
+3. still round 1, user will click on chicken.
+4. computer will move to next round if right, end game if wrong.
+5. round 2 will start. Two chickins wil change color, one after the other.
+6. Stil round 2, user will click on chickens in order
