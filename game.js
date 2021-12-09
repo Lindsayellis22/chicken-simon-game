@@ -32,20 +32,31 @@ function makeChickenPink(currentChicken) {
 }
 
 
+
+
 const chick0 = document.getElementById('0');
 const chick1 = document.getElementById('1');
 const chick2 = document.getElementById('2');
 const chick3 = document.getElementById('3');
 
-chick0.addEventListener('click', didIClick);
-chick1.addEventListener('click', didIClick);
-chick2.addEventListener('click', didIClick);
-chick3.addEventListener('click', didIClick);
+chick0.addEventListener("click", function(){
+   let clickedBird = chick0.getAttribute('id');
+    playerMovesArray.push(clickedBird);
+    // logs array and updates with each click 
+    console.log(playerMovesArray);
+});
 
-function didIClick() {
-    if(playerMovesArray.sort().join(',')=== chickenMovesArray.sort().join(',')){
-        alert('same members');
-    }
-    else alert('not a match');
-}
 
+// function didIClick() {
+//     // document.body.appendChild(chick0)
+
+// };
+
+// function playerClick() {
+//     if(playerMovesArray.sort().join(',') === chickenMovesArray.sort().join(',')){
+//         alert('same members');
+//     }
+//     else alert('not a match');
+    
+// }
+// playerClick()
