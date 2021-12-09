@@ -2,37 +2,26 @@ const chickenMovesArray = [];
 const playerMovesArray = [];
 let round = 0;
 
-
-
 startButton = document.getElementById('start');
 
-startButton.addEventListener("click", moveChickens);
+startButton.addEventListener("click", colorChickens);
 
-function moveChickens() {
-    console.log(chickenMovesArray)
+function colorChickens() {
     round += 1;
     // 1. push a random chicken into the chickenMoves array.
     chickenMovesArray.push(Math.floor(Math.random() * 3) + 1);
     // 2. loop through chcieknMoves Array and for each chicken, make chicken color for 1 second
     chickenMovesArray.map(chicken => {
-        setTimeout(() => changeEachChicken(chicken), 1000);   
+        const currentChicken = document.getElementById(`body${chicken}`);
+        setTimeout(()=> makeChickenPink(currentChicken), 1000);
+        setTimeout(()=> makeChickenBisque(currentChicken), 2000); 
     });
-};
-
-function changeEachChicken(chicken) {
-    //  choose random chicken from array based on Math.random
-    const currentChicken = document.getElementById(`body${chicken}`);
-    // change chicken color
-    makeChickenPink(currentChicken);
-    // set timeout to revert chicken back to bisque after 1 second
-    setTimeout(() => makeChickenBisque(currentChicken), 1000);
+    console.log(chickenMovesArray);
 };
 
 function makeChickenBisque(currentChicken) {
     currentChicken.style.background = "bisque";
-    console.log(currentChicken)
 }
-
 
 function makeChickenPink(currentChicken) {
     currentChicken.style.background = "hotpink";
