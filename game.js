@@ -34,19 +34,36 @@ function makeChickenPink(currentChicken) {
 
 
 
-const chick0 = document.getElementById('0');
-const chick1 = document.getElementById('1');
-const chick2 = document.getElementById('2');
-const chick3 = document.getElementById('3');
 
-chick0.addEventListener("click", function(){
-   let clickedBird = chick0.getAttribute('id');
-    playerMovesArray.push(clickedBird);
-    // logs array and updates with each click 
-    console.log(playerMovesArray);
-});
+function playerClick() {
+    const chick0 = document.getElementById('0');
+    const chick1 = document.getElementById('1');
+    const chick2 = document.getElementById('2');
+    const chick3 = document.getElementById('3');
+    chick0.addEventListener("click", function(){
+        let clickedBird = chick0.getAttribute('id');
+        playerMovesArray.push(clickedBird);
+        console.log(playerMovesArray);
+    });
+    chick1.addEventListener("click", function(){
+        let clickedBird = chick1.getAttribute('id');
+        playerMovesArray.push(clickedBird);
+        console.log(playerMovesArray);
+    });
+    chick2.addEventListener("click", function(){
+        let clickedBird = chick2.getAttribute('id');
+        playerMovesArray.push(clickedBird);
+        console.log(playerMovesArray);
+    });
+    chick3.addEventListener("click", function(){
+        let clickedBird = chick3.getAttribute('id');
+        playerMovesArray.push(clickedBird);
+        console.log(playerMovesArray);
+    });
 
+}
 
+playerClick()
 // function didIClick() {
 //     // document.body.appendChild(chick0)
 
