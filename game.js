@@ -7,7 +7,8 @@ startButton = document.getElementById('start');
 startButton.addEventListener("click", colorChickens);
 
 function colorChickens() {
-    round += 1;
+    // working = true;
+    gameRound();
     // 1. push a random chicken into the chickenMoves array.
     chickenMovesArray.push(Math.floor(Math.random() * 3) + 1);
     chickenMovesArray.map((chicken, i) => {
@@ -20,8 +21,11 @@ function colorChickens() {
         }, i * 2000)
     })
 }
-//     console.log(chickenMovesArray);
+    console.log(chickenMovesArray);
 // };
+function gameRound() {
+   return round += 1; 
+};
 
 function makeChickenBisque(currentChicken) {
     currentChicken.style.background = "bisque";
@@ -44,36 +48,62 @@ function playerClick() {
         let clickedBird = chick0.getAttribute('id');
         playerMovesArray.push(clickedBird);
         console.log(playerMovesArray);
+        checkIfWinner()
     });
     chick1.addEventListener("click", function(){
         let clickedBird = chick1.getAttribute('id');
         playerMovesArray.push(clickedBird);
         console.log(playerMovesArray);
+        checkIfWinner()
     });
     chick2.addEventListener("click", function(){
         let clickedBird = chick2.getAttribute('id');
         playerMovesArray.push(clickedBird);
         console.log(playerMovesArray);
+        checkIfWinner()
     });
     chick3.addEventListener("click", function(){
         let clickedBird = chick3.getAttribute('id');
         playerMovesArray.push(clickedBird);
         console.log(playerMovesArray);
+        checkIfWinner()
     });
 
 }
 
 playerClick()
-// function didIClick() {
-//     // document.body.appendChild(chick0)
 
-// };
-
-// function playerClick() {
-//     if(playerMovesArray.sort().join(',') === chickenMovesArray.sort().join(',')){
-//         alert('same members');
-//     }
-//     else alert('not a match');
+function checkIfWinner() {
+    if (playerMovesArray[playerMovesArray.length -1] == chickenMovesArray[chickenMovesArray.length-1] && (playerMovesArray.length === chickenMovesArray.length) ){
+        gameRound()
+        colorChickens()
+        console.log('ok')
+    }else {
+        console.log('you lose')
+    }
+  }  
+  checkIfWinner();
     
+            
+// if(playerMovesArray.sort().join(',') === chickenMovesArray.sort().join(',')){
+//     colorChickens();
+//     gameRound();
+// alert('same members');
 // }
-// playerClick()
+// else alert('not a match');
+// for(let i = 0; i < playerMovesArray.length; i++) {
+//     if(playerMovesArray[i] == chickenMovesArray[i]) {
+//         console.log('true')
+//         colorChickens();
+//         gameRound();
+//     }
+//     else {
+//         (playerMovesArray[i] !== chickenMovesArray[i])
+//         console.log('false')
+//     }
+
+// }
+
+
+
+
