@@ -36,9 +36,9 @@ function makeChickenBisque(currentChicken) {
 }
 
 function makeChickenPink(currentChicken) {
-    currentChicken.querySelector('.head').style.background = "#f19cbb";
-    currentChicken.querySelector('.tail').style.background = "#f19cbb";
-    currentChicken.querySelector('.body').style.background = "#f19cbb";
+    currentChicken.querySelector('.head').style.background = "#e68fac";
+    currentChicken.querySelector('.tail').style.background = "#e68fac";
+    currentChicken.querySelector('.body').style.background = "#e68fac";
 }
 
 function nextRound() {
@@ -55,6 +55,15 @@ function chickClickHandler(event) {
         checkIfWinner();
     }
 }
+
+currentChicken.addEventListener("click", clickColorChange);
+
+function clickColorChange(currentChicken) {
+    currentChicken.querySelector('.head').style.background = "#D5D6EA";
+    currentChicken.querySelector('.tail').style.background = "#D5D6EA";
+    currentChicken.querySelector('.body').style.background = "#D5D6EA";
+}
+
 
 function checkIfWinner() {
     for (let i = 0; i < playerMovesArray.length; i++) {
