@@ -16,22 +16,20 @@ h1 {
     display: flex;
     width: 100%;
     margin-top: 200px;
+    justify-content: center;
   }
   
   .chicken {
-    width: 195px;
+    width: 150px;
     height: 75px;
-    margin-right: 100px;
+    margin-right: 75px;
     transform: translate(5%, 5%);
-}
+    cursor: pointer; 
+  }
 
 /* .color-change {
     background: red;
 } */
-
-#body0 {
-    background: bisque;
-}
   
   .body {
     position: absolute;
@@ -43,7 +41,7 @@ h1 {
     border-bottom-right-radius: 500px;
     background: bisque;
     cursor: auto;
-    cursor: pointer;
+  cursor: pointer;
   }
   
   .body::after {
