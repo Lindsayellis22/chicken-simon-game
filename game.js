@@ -34,6 +34,8 @@ function newGame() {
     colorChickens();
 };
 
+// Have the computer generate a random pattern and use setTimeout to change chickens colors
+
 function colorChickens() {
     chickenMovesArray.push(Math.floor(Math.random() * 3));
     chickenMovesArray.map((chicken, i) => {
@@ -44,6 +46,8 @@ function colorChickens() {
         }, i * 2000);
     });
 }
+
+// functions to change chickens pink and than back to original color, add to setTimeout
 
 function makeChickenBisque(currentChicken) {
     currentChicken.querySelector('.head').style.background = "bisque";
@@ -57,6 +61,7 @@ function makeChickenPink(currentChicken) {
     currentChicken.querySelector('.body').style.background = "#e68fac";
 }
 
+// function for user to change color of chicken
 
 function clickColorChange(currentChicken) {
     currentChicken.querySelector('.head').style.background = "#F27348";
@@ -64,11 +69,15 @@ function clickColorChange(currentChicken) {
     currentChicken.querySelector('.body').style.background = "#F27348";
 }
 
+// This function will increment the round by 1 and empty the player array 
+
 function nextRound() {
     round += 1;
     playerMovesArray = [];
     colorChickens()
 }
+
+// this function will take the color change function and make it select the chicken the user clicks on. The chicken id is a parent, but the actual clicked element is a child.
 
 function chickClickHandler(event) { 
     const chickenId = event.target.parentElement.getAttribute("data-value");
@@ -81,7 +90,7 @@ function chickClickHandler(event) {
     }
 }
 
-
+// function will compare sequences and decide if won or lost
 function checkIfWinner() {
     if (playerMovesArray.length === chickenMovesArray.length) {
     if (playerMovesArray.length === 11) {
@@ -98,6 +107,8 @@ function checkIfWinner() {
     }
     setTimeout(nextRound, 1000);
 }
+
+// Click handler for the reset button and function to restart game 
             
 let restartButton = document.getElementById('restart');
 
