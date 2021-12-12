@@ -43,9 +43,9 @@ function makeChickenPink(currentChicken) {
 
 
 function clickColorChange(currentChicken) {
-    currentChicken.querySelector('.head').style.background = "#D5D6EA";
-    currentChicken.querySelector('.tail').style.background = "#D5D6EA";
-    currentChicken.querySelector('.body').style.background = "#D5D6EA";
+    currentChicken.querySelector('.head').style.background = "#619196";
+    currentChicken.querySelector('.tail').style.background = "#619196";
+    currentChicken.querySelector('.body').style.background = "#619196";
 }
 
 function nextRound() {
@@ -67,6 +67,12 @@ function chickClickHandler(event) {
 
 
 function checkIfWinner() {
+    if (playerMovesArray.length === chickenMovesArray.length) {
+    if (playerMovesArray.length === 11) {
+        alert("Congratulations! You've won!")
+        return;
+    }
+}
     for (let i = 0; i < playerMovesArray.length; i++) {
         if (playerMovesArray[i] !== chickenMovesArray[i]) {
             alert('Sorry, wrong chicken! Please play again :)')
@@ -82,8 +88,10 @@ let restartButton = document.getElementById('restart');
 restartButton.addEventListener("click", resetGame);
 
 function resetGame() {
-    round += 1;
+    chickenMovesArray = [];
     playerMovesArray = [];
+    round = 0;
+    colorChickens();
 }
 
 
