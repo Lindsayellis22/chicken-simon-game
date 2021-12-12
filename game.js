@@ -8,6 +8,22 @@ document.getElementById('2').addEventListener('click', chickClickHandler);
 document.getElementById('3').addEventListener('click', chickClickHandler);
 
 const startButton = document.getElementById('start');
+const openBtn = document.getElementById('openModal');
+const modal = document.getElementById('modal')
+const close = document.getElementById('close')
+
+
+
+const openModal = () => {
+    modal.style.display = 'block';
+}
+openBtn.addEventListener('click', openModal)
+
+
+const closeModal = () => {
+    modal.style.display = 'none'
+}
+close.addEventListener('click', closeModal)
 
 startButton.addEventListener("click", newGame);
 
@@ -43,9 +59,9 @@ function makeChickenPink(currentChicken) {
 
 
 function clickColorChange(currentChicken) {
-    currentChicken.querySelector('.head').style.background = "#619196";
-    currentChicken.querySelector('.tail').style.background = "#619196";
-    currentChicken.querySelector('.body').style.background = "#619196";
+    currentChicken.querySelector('.head').style.background = "#F27348";
+    currentChicken.querySelector('.tail').style.background = "#F27348";
+    currentChicken.querySelector('.body').style.background = "#F27348";
 }
 
 function nextRound() {
