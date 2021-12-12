@@ -56,19 +56,23 @@ function chickClickHandler(event) {
     }
 }
 
-currentChicken.addEventListener("click", clickColorChange);
-
 function clickColorChange(currentChicken) {
     currentChicken.querySelector('.head').style.background = "#D5D6EA";
     currentChicken.querySelector('.tail').style.background = "#D5D6EA";
     currentChicken.querySelector('.body').style.background = "#D5D6EA";
 }
 
+function nextRound() {
+    round += 1;
+    playerMovesArray = [];
+    colorChickens()
+}
+
 
 function checkIfWinner() {
     for (let i = 0; i < playerMovesArray.length; i++) {
         if (playerMovesArray[i] !== chickenMovesArray[i]) {      
-            console.log('false and lost');
+            alert("I am an alert box!");
             return "lost";
         }
     }
