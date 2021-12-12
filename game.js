@@ -41,20 +41,6 @@ function makeChickenPink(currentChicken) {
     currentChicken.querySelector('.body').style.background = "#e68fac";
 }
 
-function nextRound() {
-    console.log('next round')
-    round += 1;
-    playerMovesArray = [];
-    colorChickens();
-};
-
-function chickClickHandler(event) {
-    console.log(event);
-    playerMovesArray.push(parseInt(event.target.dataset.value));
-    if (playerMovesArray.length === chickenMovesArray.length){
-        checkIfWinner();
-    }
-}
 
 function clickColorChange(currentChicken) {
     currentChicken.querySelector('.head').style.background = "#D5D6EA";
@@ -68,27 +54,37 @@ function nextRound() {
     colorChickens()
 }
 
+function chickClickHandler(event) { 
+    const chickenId = event.target.parentElement.getAttribute("data-value");
+    const currentChicken = document.getElementById(chickenId);
+    clickColorChange(currentChicken);
+    setTimeout(() => makeChickenBisque(currentChicken), 500);
+    playerMovesArray.push(parseInt(chickenId));
+      if (playerMovesArray.length === chickenMovesArray.length){
+          checkIfWinner();
+      }
+  }
+
 
 function checkIfWinner() {
     for (let i = 0; i < playerMovesArray.length; i++) {
-        if (playerMovesArray[i] !== chickenMovesArray[i]) {      
-            alert("I am an alert box!");
+        if (playerMovesArray[i] !== chickenMovesArray[i]) {
+            alert('Sorry, wrong chicken! Please play again :)')
+            resetGame()      
             return "lost";
         }
     }
-    nextRound();
+    setTimeout(nextRound, 1000);
 }
             
-// let testButton = document.getElementById('test');
+let restartButton = document.getElementById('restart');
 
-// testButton.addEventListener("click", resetGame);
+restartButton.addEventListener("click", resetGame);
 
-// function resetGame() {
-//     chickenMovesArray.splice(0,chickenMovesArray.length)
-//     playerMovesArray.splice(0,playerMovesArray.length)
-//     round = 0;
-//     clearTimeout(timeOut);
-// }
+function resetGame() {
+    round += 1;
+    playerMovesArray = [];
+}
 
 
 
