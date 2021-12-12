@@ -1,3 +1,5 @@
+
+// Name variables
 let playerMovesArray = [];
 let chickenMovesArray = [];
 let round = 0;
@@ -12,19 +14,17 @@ const openBtn = document.getElementById('openModal');
 const modal = document.getElementById('modal')
 const close = document.getElementById('close')
 
-
-
 const openModal = () => {
     modal.style.display = 'block';
 }
 openBtn.addEventListener('click', openModal)
-
 
 const closeModal = () => {
     modal.style.display = 'none'
 }
 close.addEventListener('click', closeModal)
 
+// Click handler function to start game
 startButton.addEventListener("click", newGame);
 
 function newGame() {
@@ -78,17 +78,17 @@ function chickClickHandler(event) {
     playerMovesArray.push(parseInt(chickenId));
       if (playerMovesArray.length === chickenMovesArray.length){
           checkIfWinner();
-      }
-  }
+    }
+}
 
 
 function checkIfWinner() {
     if (playerMovesArray.length === chickenMovesArray.length) {
     if (playerMovesArray.length === 11) {
-        alert("Congratulations! You've won!")
-        return;
+            alert("Congratulations! You've won!")
+            return;
+        }
     }
-}
     for (let i = 0; i < playerMovesArray.length; i++) {
         if (playerMovesArray[i] !== chickenMovesArray[i]) {
             alert('Sorry, wrong chicken! Please play again :)')
